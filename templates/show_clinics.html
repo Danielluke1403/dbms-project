@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clinic List</title></head>
+<body>
+    <h2>List of Clinics</h2>
+    <ul>
+        {% for clinic in clinics %}
+            <li>ID: {{ clinic[0] }}, Location: {{ clinic[1] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Appointment</title></head>
+<body>
+    <h2>Add Appointment</h2>
+    <form method="POST">
+        Patient:
+        <select name="patient_id" required>
+            {% for patient in patients %}
+                <option value="{{ patient[0] }}">{{ patient[1] }}</option>
+            {% endfor %}
+        </select><br>
+
+        Doctor:
+        <select name="doc_id" required>
+            {% for doctor in doctors %}
+                <option value="{{ doctor[0] }}">{{ doctor[1] }} ({{ doctor[2] }})</option>
+            {% endfor %}
+        </select><br>
+
+        Date: <input type="date" name="appointment_date" required><br>
+        Time: <input type="time" name="appointment_time" required><br>
+        
+        <input type="submit" value="Add Appointment">
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
