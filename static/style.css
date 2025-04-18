@@ -1,0 +1,131 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fdf6ec; /* soft beige */
+  color: #4e342e; /* dark brown text */
+  padding: 40px;
+  margin: 0;
+  line-height: 1.6;
+  background: url('/static/dental_clinic.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Header */
+h1 {
+  background: linear-gradient(to right, #f5deb3, #fff8dc); /* wheat to cornsilk */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.1); /* light brown shadow */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #6b4226; /* strong brown text */
+}
+
+/* Headings */
+h2, h3 {
+  color: #6b4226;
+  border-bottom: 2px solid #8b5a2b; /* deep brown */
+  padding-bottom: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  background: #f5f5dc; /* beige background */
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(160, 82, 45, 0.08);
+}
+
+nav a {
+  color: #6b4226;
+  padding: 10px 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #ecd9c6; /* light brown hover */
+}
+
+/* Lists */
+ul {
+  list-style-type: square;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* About Section Animation */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+h2, h3, p, ul, figure {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Image Section */
+.image-section {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.image-section img {
+  border: 4px solid #8b5a2b; /* deep brown border */
+  border-radius: 16px;
+  max-width: 90%;
+  width: 500px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+  transform: scale(1.02);
+}
+
+.image-section figcaption {
+  margin-top: 12px;
+  font-style: italic;
+  color: #5c4033;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  body {
+      padding: 20px;
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav a {
+      display: block;
+      margin: 8px 0;
+  }
+
+  h1 {
+      font-size: 2rem;
+  }
+}

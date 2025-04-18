@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head><title>Add Doctor</title></head>
-<body>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"><body>
     <h2>Add Doctor</h2>
     <form method="POST">
+        doc_id:<input type="text" name="doc_id" required><br>
         Name: <input type="text" name="name" required><br>
         Specialization: <input type="text" name="specialization" required><br>
-        Phone: <input type="text" name="phone" required><br>
+        Phone: <input type="text" name="phone_no" required><br>
         Clinic:
         <select name="clinic_id">
             {% for clinic in clinics %}

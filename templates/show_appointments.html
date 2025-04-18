@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>Appointments</title></head>
-<body>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"><body>
     <h2>List of Appointments</h2>
     <ul>
         {% for appt in appointments %}

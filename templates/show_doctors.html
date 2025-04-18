@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><title>Doctors</title></head>
-<body>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"><body>
     <h2>List of Doctors</h2>
     <ul>
         {% for doctor in doctors %}

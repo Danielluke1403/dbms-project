@@ -1,17 +1,51 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html>
-<head><title>Dental Clinic</title></head>
+<head>
+    <title>Dental Clinic</title>
+</head>
 <body>
     <h1>Dental Clinic Management</h1>
-    <a href="/add_clinic">Add Clinic</a> |
-    <a href="/clinics">View Clinics</a>
-    <a href="/add_doctor">Add Doctor</a> |
-    <a href="/doctors">View Doctors</a>
-    <a href="/add_patient">Add Patient</a> |
-    <a href="/patients">View Patients</a>
-    <a href="/add_appointment">Add Appointment</a> |
-    <a href="/appointments">View Appointments</a>
+    <ul>
+        <li><a href="/add_clinic">Add Clinic</a></li>
+        <li><a href="/clinics">View Clinics</a></li>
+        <li><a href="/add_doctor">Add Doctor</a></li>
+        <li><a href="/doctors">View Doctors</a></li>
+        <li><a href="/add_patient">Add Patient</a></li>
+        <li><a href="/patients">View Patients</a></li>
+        <li><a href="/add_appointment">Add Appointment</a></li>
+        <li><a href="/appointments">View Appointments</a></li>
+        <li><link rel="stylesheet" href="{{url_for('static',filename='navbar.css')}}"></li>
+        <li><link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"></li>
+    </ul>
 
+    <!-- About Us Section -->
+    <h2>About Us</h2>
+    <p>
+        Welcome to our Dental Clinic Management System! Our goal is to provide a simple and effective platform for managing dental clinics, doctors, patients, and appointments. 
+        With this system, clinics can organize their workflow more efficiently, keep track of important data, and offer better services to their patients.
+        We are dedicated to making dental care management easy, accessible, and reliable.
+    </p>
 
+    <h3>Our Vision</h3>
+    <p>
+        To revolutionize dental healthcare management by offering modern, tech-enabled solutions that improve both clinic operations and patient experiences.
+    </p>
+
+    <h3>Our Mission</h3>
+    <p>
+        We aim to empower dental professionals with tools to streamline their daily tasks—from patient registration to appointment scheduling and medical records management—so they can focus more on delivering quality care.
+    </p>
+
+    <h3>Key Features of the System</h3>
+    <ul>
+        <li>Easy clinic and doctor registration</li>
+        <li>Comprehensive patient data management</li>
+        <li>Appointment scheduling and tracking</li>
+        <li>Clean, user-friendly interface</li>
+        <li>Scalable for multiple clinics and locations</li>
+    </ul>
+
+    <!-- Optional Image Section -->
+  
 </body>
-</html>
+</html> 

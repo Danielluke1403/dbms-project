@@ -32,13 +32,14 @@ def add_doctor():
     conn = connect_db()
     cur = conn.cursor()
     if request.method == 'POST':
+        doc_id=request.form["doc_id"]
         name = request.form['name']
         specialization = request.form['specialization']
-        phone = request.form['phone']
+        phone = request.form['phone_no']
         clinic_id = request.form['clinic_id']
         cur.execute(
-            "INSERT INTO doctor (name, specialization, phone, clinic_id) VALUES (%s, %s, %s, %s)",
-            (name, specialization, phone, clinic_id)
+            "INSERT INTO doctor (doc_id,name, specialization, phone_no, clinic_id) VALUES (%s,%s, %s, %s, %s)",
+            (doc_id,name, specialization, phone_no, clinic_id)
         )
         conn.commit()
         conn.close()
@@ -68,12 +69,12 @@ def add_patient():
         name = request.form['name']
         age = request.form['age']
         gender = request.form['gender']
-        phone = request.form['phone']
+        phone = request.form['phone_no']
         medical_history = request.form['medical_history']
         doc_id = request.form['doc_id']
         cur.execute(
-            "INSERT INTO patient (name, age, gender, phone, medical_history, doc_id) VALUES (%s, %s, %s, %s, %s, %s)",
-            (name, age, gender, phone, medical_history, doc_id)
+            "INSERT INTO patient (name, age, gender, phone_no, medical_history, doc_id) VALUES (%s, %s, %s, %s, %s, %s)",
+            (name, age, gender, phone_no, medical_history, doc_id)
         )
         conn.commit()
         conn.close()
