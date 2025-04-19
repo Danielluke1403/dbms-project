@@ -1,5 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for
 from db_config import connect_db
+from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
+clinic_bot = ChatBot("ClinicBot")
+trainer = ChatterBotCorpusTrainer(clinic_bot)
+trainer.train("chatterbot.corpus.english")
 
 app = Flask(__name__)
 
@@ -35,7 +40,7 @@ def add_doctor():
         doc_id=request.form["doc_id"]
         name = request.form['name']
         specialization = request.form['specialization']
-        phone = request.form['phone_no']
+        phone_no = request.form["phone_no"]
         clinic_id = request.form['clinic_id']
         cur.execute(
             "INSERT INTO doctor (doc_id,name, specialization, phone_no, clinic_id) VALUES (%s,%s, %s, %s, %s)",
@@ -69,7 +74,7 @@ def add_patient():
         name = request.form['name']
         age = request.form['age']
         gender = request.form['gender']
-        phone = request.form['phone_no']
+        phone_no = request.form['phone_no']
         medical_history = request.form['medical_history']
         doc_id = request.form['doc_id']
         cur.execute(
@@ -128,6 +133,13 @@ def show_appointments():
     appointments = cur.fetchall()
     conn.close()
     return render_template('show_appointments.html', appointments=appointments)
+
+@app.route('/chat-popup', methods=['POST'])
+def chat_popup():
+    user_input = request.form['user_input']
+    response = clinic_bot.get_response(user_input)
+
+    return render_template('home.html', response=response)
 
 
 if __name__ == '__main__':
