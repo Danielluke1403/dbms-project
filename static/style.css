@@ -1,131 +1,128 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fdf6ec; /* soft beige */
-  color: #4e342e; /* dark brown text */
-  padding: 40px;
-  margin: 0;
-  line-height: 1.6;
-  background: url('/static/dental_clinic.jpg') no-repeat center center fixed;
+body { 
+  background: url('dental_clinic.jpeg') no-repeat center center fixed;
   background-size: cover;
-}
-
-/* Header */
-h1 {
-  background: linear-gradient(to right, #f5deb3, #fff8dc); /* wheat to cornsilk */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4b4b4b;
+  margin: 0;
   padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(160, 82, 45, 0.1); /* light brown shadow */
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Adding the lightened overlay */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.4); /* Semi-transparent white overlay */
+  z-index: -1;
+}
+
+h1 {
+  color: #4a3c2d; /* Darker color for the heading */
   text-align: center;
-  color: #6b4226; /* strong brown text */
-}
-
-/* Headings */
-h2, h3 {
-  color: #6b4226;
-  border-bottom: 2px solid #8b5a2b; /* deep brown */
-  padding-bottom: 10px;
-  margin-top: 30px;
   margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: none; /* Removed shadow */
 }
 
-/* Navigation */
-nav {
+h2, h3 {
+  color: #4a3c2d; /* Darker color for subheadings */
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-shadow: none; /* Removed shadow */
+}
+
+p {
+  max-width: 850px;
+  margin: 0 auto 30px auto;
+  line-height: 1.7;
+  font-size: 18px;
+  color: #f8f8f8;
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.4); /* Darkened background */
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: none; /* Removed shadow */
+  letter-spacing: 0.5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 30px;
-  background: #f5f5dc; /* beige background */
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(160, 82, 45, 0.08);
-}
-
-nav a {
-  color: #6b4226;
-  padding: 10px 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  text-decoration: none;
-}
-
-nav a:hover {
-  background-color: #ecd9c6; /* light brown hover */
-}
-
-/* Lists */
-ul {
-  list-style-type: square;
-  padding-left: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 ul li {
-  margin-bottom: 10px;
+  margin: 12px 20px;
 }
 
-/* About Section Animation */
-@keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+ul li a {
+  text-decoration: none;
+  background-color: rgba(216, 195, 165, 0.8);
+  padding: 10px 4px;
+  border-radius: 8px;
+  color: #4b4b4b;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+  letter-spacing: 1px;
 }
 
-h2, h3, p, ul, figure {
-  animation: fadeInUp 0.6s ease-out;
+ul li a:hover {
+  background-color: rgba(194, 178, 128, 0.9);
+  color: white;
 }
 
-/* Image Section */
-.image-section {
+ul.key-features {
+  list-style-type: disc;
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 20px;
+  text-align: left;
+}
+
+ul.key-features li {
+  margin-bottom: 12px;
+}
+
+h2, h3, p, ul {
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  margin-top: 50px;
 }
 
-.image-section img {
-  border: 4px solid #8b5a2b; /* deep brown border */
-  border-radius: 16px;
-  max-width: 90%;
-  width: 500px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.image-section img:hover {
-  transform: scale(1.02);
-}
-
-.image-section figcaption {
-  margin-top: 12px;
-  font-style: italic;
-  color: #5c4033;
-  font-size: 0.95rem;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  body {
-      padding: 20px;
-  }
-
-  nav {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  nav a {
-      display: block;
-      margin: 8px 0;
-  }
-
+/* Make sure the page remains responsive */
+@media (max-width: 768px) {
   h1 {
-      font-size: 2rem;
+    font-size: 32px;
+  }
+  h2, h3 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+    padding: 20px;
+  }
+  ul {
+    flex-direction: column;
+  }
+  ul li {
+    margin: 10px 0;
   }
 }
