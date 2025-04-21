@@ -2,9 +2,9 @@ import psycopg2
 
 def connect_db():
     return psycopg2.connect(
-        dbname="dentist",     # change if needed
-        user="postgres",        # <- your PostgreSQL username
-        password="1403",    # <- your PostgreSQL password
+        dbname="dentist",     
+        user="postgres",       
+        password="1403",    
         host="localhost",
         port="5432"
     )

@@ -1,5 +1,5 @@
 body { 
-  background: url('dental_clinic1.jpg') no-repeat center center fixed;
+  background: url('dental2.jpg') no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #4b4b4b;
@@ -9,20 +9,9 @@ body {
   position: relative;
 }
 
-/* Adding the lightened overlay with a blue-green tint */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(153, 217, 140, 0.3); /* Light green from your palette with transparency */
-  z-index: -1;
-}
 
 h1, h2, h3 {
-  color: #184E77; /* Darkest blue from your palette */
+  color: #184E77; 
   text-align: center;
   margin-bottom: 20px;
   font-weight: 700;
@@ -41,11 +30,11 @@ h2, h3 {
 form {
   max-width: 800px;
   margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.8); /* Light background for forms */
+  background-color: rgba(255, 255, 255, 0.8); 
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(26, 117, 159, 0.3); /* Shadow with blue from your palette */
-  border: 1px solid rgba(118, 200, 147, 0.3); /* Light green border */
+  box-shadow: 0 4px 8px rgba(26, 117, 159, 0.3); 
+  border: 1px solid rgba(118, 200, 147, 0.3); 
 }
 
 input[type="text"], input[type="number"], input[type="date"], input[type="time"], select, textarea {
@@ -53,13 +42,13 @@ input[type="text"], input[type="number"], input[type="date"], input[type="time"]
   padding: 10px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: 1px solid #52B69A; /* Medium green from your palette */
+  border: 1px solid #52B69A; 
   font-size: 16px;
   font-family: 'Arial', sans-serif;
 }
 
 input[type="submit"] {
-  background-color: #168AAD; /* Blue-teal from your palette */
+  background-color: #168AAD; 
   color: white;
   padding: 10px 20px;
   border: none;
@@ -71,17 +60,17 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #1E6091; /* Deeper blue from your palette */
+  background-color: #1E6091; 
 }
 
 a {
-  color: #168AAD; /* Blue-teal from your palette */
+  color: #168AAD; 
   text-decoration: none;
   font-size: 16px;
 }
 
 a:hover {
-  color: #1E6091; /* Deeper blue from your palette */
+  color: #1E6091; 
 }
 
 ul {
@@ -100,7 +89,7 @@ ul li {
 
 ul li a {
   text-decoration: none;
-  background-color: rgba(52, 160, 164, 0.8); /* Teal from your palette */
+  background-color: rgba(52, 160, 164, 0.8); 
   padding: 10px 20px;
   border-radius: 8px;
   color: white;
@@ -110,7 +99,7 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: rgba(30, 96, 145, 0.9); /* Deep blue from your palette */
+  background-color: rgba(30, 96, 145, 0.9);
   color: white;
 }
 
@@ -126,7 +115,7 @@ ul.key-features {
 
 ul.key-features li {
   margin-bottom: 12px;
-  color: #34A0A4; /* Teal from your palette */
+  color: #34A0A4; 
 }
 
 h2, h3, p, ul {
@@ -135,7 +124,7 @@ h2, h3, p, ul {
   text-align: center;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
