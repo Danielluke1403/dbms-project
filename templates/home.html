@@ -11,79 +11,84 @@
     <style>
         
         body {
-            height: 100vh;
-            overflow: hidden;
-            background-image: url("{{ url_for('static', filename='dental_clinic1.jpg') }}");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-color: rgba(194, 178, 128, 0.9); /* fallback if image doesn't load */
-        }
-    
-        .container-fluid {
-            background-color: rgba(255, 255, 255, 0.8); /* semi-transparent to make content readable */
-            height: 100vh;
-        }
-    
-        .sidebar {
-            height: 100vh;
-            background-color: #D6B588;
-            color: white;
-        }
-    
-        .sidebar a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px 15px;
-        }
-    
-        .sidebar a:hover {
-            background-color: #9F8C76 ;
-        }
-    
-        .content {
-            padding: 20px;
-            overflow-y: auto;
-            height: 100vh;
-        }
-    
-        .chat-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            font-size: 30px;
-            cursor: pointer;
-        }
-    
-        #chatModal {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border: 1px solid #ccc;
-            padding: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            z-index: 1000;
-        }
-        button, .btn {
-    background-color: #d2b48c; /* tan */
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("{{ url_for('static', filename='46e13e333c5edeb60c5f2ba6d99e5348.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #52B69A; /* fallback using one of your greens if image doesn't load */
+}
+
+.container-fluid {
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent to make content readable */
+    height: 100vh;
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: #429E9D; 
+    color: white;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+.sidebar a:hover {
+    background-color: #1A759F; /* mid-tone blue from your palette */
+}
+
+.content {
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #34A0A4; /* teal from your palette */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#chatModal {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border: 1px solid #76C893; /* light green from your palette */
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(24, 78, 119, 0.3); /* shadow with darkest blue */
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+button, .btn {
+    background-color: #168AAD; /* blue-teal from your palette */
     color: white;
     border: none;
     padding: 10px 18px;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #1E6091; /* deeper blue from your palette */
 }
 
 button:hover, .btn:hover {
@@ -98,7 +103,7 @@ button:hover, .btn:hover {
 <div class="container-fluid">
     <div class="row">
         <!-- Sidebar -->
-        <div class="col-md-1 sidebar d-flex flex-column">
+        <div class="col-md-2 sidebar d-flex flex-column">
             <h4 class="text-center mt-3">Dental Admin</h4>
             <a href="/add_clinic">Add Clinic</a>
             <a href="/clinics">View Clinics</a>

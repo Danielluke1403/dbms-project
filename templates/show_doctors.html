@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head><title>Doctors</title></head>
-<li><link rel="stylesheet" href="{{url_for('static',filename='main.css')}}"></li><body>
+<head>
+    <title>Doctors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #76C893;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #168AAD;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f0fbf0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 12px;
+            background-color: #76C893;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #52B69A;
+        }
+    </style>
+</head>
+<body>
     <h2>List of Doctors</h2>
-    <ul>
-        {% for doctor in doctors %}
-            <li>ID: {{ doctor[0] }}, Name: {{ doctor[1] }}, Specialization: {{ doctor[2] }}, Phone: {{ doctor[3] }}, Clinic ID: {{ doctor[4] }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Specialization</th>
+                <th>Phone</th>
+                <th>Clinic ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for doctor in doctors %}
+            <tr>
+                <td>{{ doctor[0] }}</td>
+                <td>{{ doctor[1] }}</td>
+                <td>{{ doctor[2] }}</td>
+                <td>{{ doctor[3] }}</td>
+                <td>{{ doctor[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <a href="/">Back to Home</a>
 </body>
 </html>

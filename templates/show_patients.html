@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head><title>Patients</title></head>
-<li><link rel="stylesheet" href="{{url_for('static',filename='main.css')}}"></li><body>
+<head>
+    <title>Patients</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #76C893;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #52B69A;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fdf9;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 12px;
+            background-color: #76C893;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #52B69A;
+        }
+    </style>
+</head>
+<body>
     <h2>List of Patients</h2>
-    <ul>
-        {% for patient in patients %}
-            <li>ID: {{ patient[0] }}, Name: {{ patient[1] }}, Age: {{ patient[2] }}, Gender: {{ patient[3] }}, Phone: {{ patient[4] }}, Doctor ID: {{ patient[6] }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Doctor ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for patient in patients %}
+            <tr>
+                <td>{{ patient[0] }}</td>
+                <td>{{ patient[1] }}</td>
+                <td>{{ patient[2] }}</td>
+                <td>{{ patient[3] }}</td>
+                <td>{{ patient[4] }}</td>
+                <td>{{ patient[6] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <a href="/">Back to Home</a>
 </body>
 </html>

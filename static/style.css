@@ -9,7 +9,7 @@ body {
   position: relative;
 }
 
-/* Adding the lightened overlay */
+/* Adding the lightened overlay with a slight blue-green tint */
 body::before {
   content: '';
   position: absolute;
@@ -17,27 +17,27 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.4); /* Semi-transparent white overlay */
+  background: rgba(217, 237, 146, 0.3); /* Very light green from your palette with transparency */
   z-index: -1;
 }
 
 h1 {
-  color: #4a3c2d; /* Darker color for the heading */
+  color: #184E77; /* Darkest blue from your palette */
   text-align: center;
   margin-bottom: 20px;
   font-size: 40px;
   font-weight: 700;
   letter-spacing: 2px;
-  text-shadow: none; /* Removed shadow */
+  text-shadow: none;
 }
 
 h2, h3 {
-  color: #4a3c2d; /* Darker color for subheadings */
+  color: #1E6091; /* Deep blue from your palette */
   margin-top: 20px;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 1px;
-  text-shadow: none; /* Removed shadow */
+  text-shadow: none;
 }
 
 p {
@@ -49,10 +49,10 @@ p {
   font-family: 'Arial', sans-serif;
   font-weight: 400;
   text-align: justify;
-  background-color: rgba(0, 0, 0, 0.4); /* Darkened background */
+  background-color: rgba(26, 117, 159, 0.8); /* Blue from your palette with transparency */
   padding: 25px;
   border-radius: 12px;
-  box-shadow: none; /* Removed shadow */
+  box-shadow: none;
   letter-spacing: 0.5px;
 }
 
@@ -72,10 +72,10 @@ ul li {
 
 ul li a {
   text-decoration: none;
-  background-color: rgba(216, 195, 165, 0.8);
-  padding: 10px 4px;
+  background-color: rgba(52, 160, 164, 0.8); /* Teal from your palette with transparency */
+  padding: 10px 16px;
   border-radius: 8px;
-  color: #4b4b4b;
+  color: white;
   font-weight: 600;
   font-size: 16px;
   transition: background-color 0.3s, color 0.3s;
@@ -83,7 +83,7 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: rgba(194, 178, 128, 0.9);
+  background-color: rgba(22, 138, 173, 0.9); /* Darker blue-teal from your palette */
   color: white;
 }
 
@@ -99,6 +99,7 @@ ul.key-features {
 
 ul.key-features li {
   margin-bottom: 12px;
+  color: #168AAD; /* Blue-teal from your palette for list items */
 }
 
 h2, h3, p, ul {

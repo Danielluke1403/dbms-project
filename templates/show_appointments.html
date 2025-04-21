@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head><title>Appointments</title></head>
-<li><link rel="stylesheet" href="{{url_for('static',filename='main.css')}}"></li><body>
+<head>
+    <title>Appointments</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #76C893;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #168AAD;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f0fbf0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 12px;
+            background-color: #76C893;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #52B69A;
+        }
+    </style>
+</head>
+<body>
     <h2>List of Appointments</h2>
-    <ul>
-        {% for appt in appointments %}
-            <li>ID: {{ appt[0] }}, Patient ID: {{ appt[1] }}, Doctor ID: {{ appt[2] }}, Date: {{ appt[3] }}, Time: {{ appt[4] }}</li>
-        {% endfor %}
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Patient ID</th>
+                <th>Doctor ID</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appt in appointments %}
+            <tr>
+                <td>{{ appt[0] }}</td>
+                <td>{{ appt[1] }}</td>
+                <td>{{ appt[2] }}</td>
+                <td>{{ appt[3] }}</td>
+                <td>{{ appt[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
     <a href="/">Back to Home</a>
 </body>
 </html>
