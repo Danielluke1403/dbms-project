@@ -39,6 +39,8 @@ https://github.com/yourusername/dental-clinic-management.git
 2. Install the required Python libraries:
 
 pip install flask
+
+
 pip install chatterbot chatterbot_corpus
 
 
