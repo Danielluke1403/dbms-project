@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Analytics</title>
+    <style>
+        .graph-container {
+            width: 80%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .graph-title {
+          text-align: center;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Visual Analytics</h1>
+
+    <div class="graph-container">
+        <h2 class="graph-title">Appointment Trends</h2>
+        <div id="appointment-trends">
+            <!-- Appointment Trends Graph will be rendered here -->
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <h2 class="graph-title">Clinic Comparisons</h2>
+        <div id="clinic-comparisons">
+            <!-- Clinic Comparisons Graph will be rendered here -->
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <h2 class="graph-title">Patient Growth Rate</h2>
+        <div id="patient-growth-rate">
+            <!-- Patient Growth Rate Graph will be rendered here -->
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <h2 class="graph-title">Doctor Workload</h2>
+        <div id="doctor-workload">
+            <!-- Doctor Workload Graph will be rendered here -->
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      // Example data and chart creation using Chart.js, replace with your actual data
+      // You need to load the data from flask to draw the graph
+
+      // Example Appointment Trend
+        const appointmentTrendsCtx = document.getElementById('appointment-trends');
+        new Chart(appointmentTrendsCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Number of Appointments',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+        });
+      
+      // Example Clinic Comparision
+        const clinicComparisonsCtx = document.getElementById('clinic-comparisons');
+        new Chart(clinicComparisonsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Clinic A', 'Clinic B', 'Clinic C'],
+                datasets: [{
+                    label: 'Number of Patients',
+                    data: [120, 150, 90],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                  y: {
+                    beginAtZero: true
+                  }
+                }
+              }
+        });
+      
+      // Example Patient Growth Rate
+      const patientGrowthRateCtx = document.getElementById('patient-growth-rate');
+        new Chart(patientGrowthRateCtx, {
+          type: 'line',
+          data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+              label: 'Patient Growth Rate',
+              data: [10, 15, 22, 28, 35, 42],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+        // Example Doctor Workload
+        const doctorWorkloadCtx = document.getElementById('doctor-workload');
+        new Chart(doctorWorkloadCtx, {
+          type: 'bar',
+          data: {
+            labels: ['Dr. Smith', 'Dr. Jones', 'Dr. Brown'],
+            datasets: [{
+              label: 'Number of Appointments',
+              data: [30, 25, 35],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      
+    </script>
+</body>
+</html>

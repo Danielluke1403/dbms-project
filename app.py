@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from db_config import connect_db
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
@@ -235,6 +235,47 @@ def dashboard():
                            total_doctors=total_doctors,
                            total_appointments=total_appointments,
                            total_clinics=total_clinics)
+
+@app.route('/analytics')
+def analytics():
+    conn = connect_db()
+    cur = conn.cursor()
+
+    # Example: Fetching data for appointment trends
+    cur.execute("""
+        SELECT appointment_date, COUNT(*)
+        FROM appointment
+        GROUP BY appointment_date
+        ORDER BY appointment_date
+    """)
+    appointment_trends = cur.fetchall()
+
+    # Example: Fetching data for clinic comparisons (number of appointments per clinic)
+    cur.execute("""
+        SELECT c.location, COUNT(a.appointment_id)
+        FROM clinic c
+        LEFT JOIN doctor d ON c.clinic_id = d.clinic_id
+        LEFT JOIN appointment a ON d.doc_id = a.doc_id
+        GROUP BY c.location
+    """)
+    clinic_comparisons = cur.fetchall()
+
+    # Example: Fetching data for patient growth (number of patients per month)
+    cur.execute("""
+        SELECT strftime('%Y-%m', date(registration_date)) AS month, COUNT(*)
+        FROM patient
+        GROUP BY month
+        ORDER BY month
+    """)
+    patient_growth = cur.fetchall()
+    
+    cur.execute("SELECT d.name, COUNT(a.appointment_id) FROM doctor d LEFT JOIN appointment a ON d.doc_id = a.doc_id GROUP BY d.name")
+    doctor_workload = cur.fetchall()
+    conn.close()
+
+    return render_template('analytics.html', 
+                           appointment_trends=appointment_trends,
+                           clinic_comparisons=clinic_comparisons, patient_growth=patient_growth, doctor_workload=doctor_workload)
 
 if __name__ == '__main__':
     app.run(debug=True)
